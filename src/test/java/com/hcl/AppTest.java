@@ -14,13 +14,13 @@ public class AppTest {
 
     @BeforeAll
     static void setUp() {
-        System.out.println("The @BeforeAll method is executed.");
+        System.out.println("The @BeforeAll method is executed only once.");
         System.out.println();
     }
 
     @AfterAll
     static void tearDown() {
-        System.out.println("The @AfterAll method is executed.");
+        System.out.println("The @AfterAll method is executed only once.");
         System.out.println();
     }
 
@@ -49,7 +49,6 @@ public class AppTest {
      * This method will test negative add cases
      */
     @Test
-
     public void negativeAddTestCases() {
         Assertions.assertNotEquals(25, c.add(6, 3));
         Assertions.assertNotEquals(36, c.add(25, 2));
@@ -168,7 +167,6 @@ public class AppTest {
 	{
 		System.out.println("In test 1. Doing assertAll");
 		assertAll("Multiplication, Division, and Square root ",() -> assertEquals(20, c.multiply(4,5)), () -> assertEquals(5, c.divide(10,2)), () -> assertEquals(5,c.squareRoot(25)));
-		System.out.println("calling from Test4");
 	}
 
 
