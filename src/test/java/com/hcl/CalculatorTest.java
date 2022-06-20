@@ -61,6 +61,7 @@ public class CalculatorTest {
      */
     @Test
     @Order(3)
+    @Disabled
     public void positiveSubtractTestCases() {
         Assertions.assertEquals(2, c.subtract(4, 2));
         Assertions.assertEquals(20, c.subtract(30, 10));
@@ -181,10 +182,12 @@ public class CalculatorTest {
     public void calculateTest1()
     {
         System.out.println("In test 1. Doing assertAll");
-        assertAll("Multiplication, Division, and Square root ",
+        Assertions.assertAll("Multiplication, Division, and Square root ",
                 () -> assertEquals(20, c.multiply(4,5)),
                 () -> assertEquals(5, c.divide(10,2)),
                 () -> assertEquals(5,c.squareRoot(25)));
+
+
     }
 
 }
